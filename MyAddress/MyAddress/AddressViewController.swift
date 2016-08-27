@@ -74,7 +74,7 @@ extension AddressViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager,
                          didUpdateLocations locations: [CLLocation]) {
         if locations.count > 0 {
-            let coordinate = locations[0].coordinate
+            let coordinate = locations.first!.coordinate
             
             performUIUpdatesOnMain {
                 self.addressLabel.text = String(coordinate.latitude.description + " " + coordinate.longitude.description )
